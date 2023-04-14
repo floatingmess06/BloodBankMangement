@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Doner</title>
+    <link rel="stylesheet" href="/style" />
+    <script>
+        function getData() {
+            let fname = document.getElementById('fname').value;
+            let mob = document.getElementById('mob').value;
+            let email = document.getElementById('email').value;
+            let age = document.getElementById('age').value;
+            let gen = document.getElementById('gen').value;
+            let bgroup = document.getElementById('bgroup').value;
+            let addre = document.getElementById('addre').value;
+            
+            var phoneno = /^\d{10}$/;
+            if (!mob.match(phoneno))
+            {
+                
+                alert("Invalid mobile Number");
+            }
+            else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
+                alert("Invalid Email. Please Enter a valid email Address");
+            }
+            else if(age < 18 && age > 60)
+            {
+                alert("Invalid age. Please check it again");
+            }
+            else if(!bgroup.match("A+") && !bgroup.match("B+") && !bgroup.match("AB+")&& !bgroup.match("A-")&&!bgroup.match("B-")&& !bgroup.match("AB-")&&!bgroup.match("O+")&&!bgroup.match("O-"))
+            {
+                alert("Invalid Blood Group Entered");
+            }
+            else
+            {
+                document.getElementById('btns').setAttribute("type","submit")
+                document.getElementById('form1').setAttribute("method", 'POST')
+                document.getElementById('form1').setAttribute("action", '/saved')
+            }
+            }
+    </script>
+  </head>
+
+  <body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Blood Bank </a></div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/donate">Donate</a></li>
+                <li><a href="/need">Need Blood</a></li>
+            </ul>
+            <a href="#" class="action_btn">Contact Us</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu open">
+            <li><a href="/">Home</a></li>
+            <li><a href="/donate">Donate</a></li>
+            <li><a href="/need">Need Blood</a></li>
+        </div>
+    </header>
+    
+    <form id="form1">
+    <div class="container">
+      <div class="card">
+        <a class="singup">Donate Blood</a>
+        <!-- <div class="inputBox1">
+          <input type="text" required="required">
+          <span class="user">Full Name</span>
+        </div> -->
+
+        <div class="row">
+          <div class="inputBox">
+            <input type="text" required="required" name="fullName">
+            <span>Full Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="password" required="required" name="Mob">
+            <span>Mobile No</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="inputBox">
+            <input type="text" required="required" name="email">
+            <span>Email ID</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" name="age">
+            <span>Age</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="inputBox">
+            <input type="text" required="required" name="gender">
+            <span>Gender</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" name="bloodgrp">
+            <span>Blood Group</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="inputBox">
+            <input type="text" required="required" name="addr">
+            <span>Address</span>
+          </div>
+          
+        </div>
+
+        <button class="enter" id="btns" onclick="getData()">Enter</button>
+
+      </div>
+    </div>
+</form>
+  </body>
+</html>
+
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <title>Blood Bank Management</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+        <link rel="stylesheet" href="./dashboard_style.css">
+        <link rel="stylesheet" href="./add_donor_style.css">
+
+</head>
+<script>  
+        //show and hide dropdown list item on button click  
+        function show_hide() {  
+           var click = document.getElementById("dropdown-content");  
+           if(click.style.display ==="none") {  
+                  click.style.display ="block";  
+           } else {  
+                  click.style.display ="none";  
+           }   
+        }  
+ </script> 
+<body>
+        <!-- partial:index.partial.html -->
+        <div class="app">
+                <header class="app-header">
+                        <div class="app-header-logo">
+                                <div class="logo">
+                                        <span class="logo-icon">
+                                                <img src="https://assets.codepen.io/285131/almeria-logo.svg" />
+                                        </span>
+                                        <h1 class="logo-title">
+                                                <span>PARS</span>
+                                                <span>OnBLoodBank</span>
+                                        </h1>
+                                </div>
+                        </div>
+                        <div class="app-header-navigation">
+                                <div class="tabs">
+                                        <a href="#" class="bordercol">
+                                                Welcome To Admin Panel !
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="app-header-actions" onclick="show_hide()">
+                                <button class="user-profile">
+                                        <span>UserName</span>
+                                        <div class="dropdown" >
+                                        <span>
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeGL4q-8fsn0laf9xBKMk5lcsMAi-ybmbFv0EL7W_xqw&usqp=CAU&ec=48665701" />
+                                        </span>
+                                        <div class="dropdown-content" id="dropdown-content">
+                                                        <a href="/">Logout</a>
+                                                </div>
+                                          </div>
+                                </button>
+                        </div>
+                        <div class="app-header-mobile">
+                                <button class="icon-button large">
+                                        <i class="ph-list"></i>
+                                </button>
+                        </div>
+
+                </header>
+                <div class="app-body">
+                        <div class="app-body-navigation">
+                                <nav class="navigation">
+                                        <a href="/dashboard_index">
+                                                <i class="ph-browsers"></i>
+                                                <span>Dashboard</span>
+                                        </a>
+                                        <a href="/add_donor_index">
+                                                <i class="ph-check-square"></i>
+                                                <span>Add Donor</span>
+                                        </a>
+                                <!--    <a href="#">
+                                                <i class="ph-swap"></i>
+                                                <span>Donor List</span>
+                                        </a>
+                                        <a href="#">
+                                                <i class="ph-file-text"></i>
+                                                <span>Check Contact Us Queries</span>
+                                        </a> -->
+                                        <a href="/Update_contact_info">
+                                                <i class="ph-clipboard-text"></i>
+                                                <span>Update Contact Info</span>
+                                        </a>
+                                </nav>
+                                <footer class="footer">
+                                        <h1>PARS<small>©</small></h1>
+                                        <div>
+                                                PARS ©<br />
+                                                All Rights Reserved 2023
+                                        </div>
+                                </footer>
+                        </div>
+                        <div class="app-body-main-content">
+                                <section class="service-section">
+                    <fieldset class="info-form">
+                        <legend>Update Contact Info</legend>
+                                                <form action="/update" method="post">
+                            <div class="user-box">
+                              <input type="text" name="addr" required="">
+                              <label>Address</label>
+                            </div>
+                            <div class="user-box">
+                              <input type="text" name="email" required="" >
+                              <label>Email Id</label>
+                            </div>
+                                                        <div class="user-box">
+                                                          <input type="text" name="Mob" required="" >
+                                                          <label>Contact Number</label>
+                                                        </div>
+                                                        <br>
+                                                        <button type="submit" id="btns">
+                                                          <span></span>
+                                                          <span></span>
+                                                          <span></span>
+                                                          <span></span>
+                                                          Submit
+                                                        </button>
+                                                  </form>
+
+                                        </fieldset>
+
+                                </section>
+
+                        </div>
+
+                </div>
+        </div>
+</body>
+
+</html>
